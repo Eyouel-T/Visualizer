@@ -58,7 +58,7 @@ function selectionSort(anArray){
         var a = anArray.indexOf(min);
         var b = anArray[m];
         anArray[a] = b;
-        anArray[i] = min;
+        anArray[m] = min;
         
     }
     
