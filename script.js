@@ -46,19 +46,30 @@ function bubbleSort(anArray){
     console.log(`sorted array ${anArray}`)
     return anArray;
 }
+var aGivenArray = [23, 23, 50, 8, 37, 26, 29, 17, 49, 44]
 function selectionSort(anArray){  
     console.log(anArray.length);
     for(var m=0;m<anArray.length; m++){
         var min = anArray[m];
+        var minIndex = m;
+        console.log(`minimum is ${min} on the ${m}th iteration`)
         for(var i=m; i<anArray.length; i++){
+            console.log(`M IS ${m} and i is ${i}`);
             if(min>=anArray[i]){
                 min=anArray[i];
+                minIndex = i;
+                console.log(`the new minimum is ${min}`)
+                //console.log("found a new minimum at index: "+ i+ "which is "+min);
             }
         }
-        var a = anArray.indexOf(min);
+        
+        var a = minIndex;
         var b = anArray[m];
         anArray[a] = b;
         anArray[m] = min;
+        console.log(`when the ${m}th iteration is done the minimum is${min}`);
+        console.log(`beause the minimum is ${min} im swapping its position which is at index ${a} with index${m}`)
+        console.log(`the new arrau looks like this ${anArray}`);
         
     }
     
@@ -81,7 +92,7 @@ function selectionSort(anArray){
     return sortedArray;
     */
 }
-
+selectionSort(aGivenArray);
 document.querySelector("#selectionSort").addEventListener('click', event => {
     selectionSort(newArray);
   });
