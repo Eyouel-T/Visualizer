@@ -6,7 +6,7 @@ function arrayGenerator(arrayLength){
          var randomNumber = Math.ceil((Math.random()*50));
          randomArray.push(randomNumber)
          document.querySelector(".main").innerHTML += 
-          `<div class="rectangle" id='${i}' style= "height:${randomNumber*1}px" ></div>`;
+          `<div class="rectangle" id='${i}' style= "height:${randomNumber*2}px" ></div>`;
      }
      console.log(randomArray);
      newArray = randomArray
@@ -19,7 +19,7 @@ function bubbleSort(anArray){
         for(var i=0; i<anArray.length; i++){
             if(anArray[i]> anArray[i+1]){
                 
-                syncDelay(5);
+                
                 var a = anArray[i];
                 var b = anArray[i+1];
                 console.log(`comparing ${a} and ${b} and swapped them`);
@@ -32,7 +32,7 @@ function bubbleSort(anArray){
                 var styleOfb = document.getElementById(`${(i)+1}`).offsetHeight;
                 console.log(`the height of element ${i+1} is ${styleOfb}`);
                 document.getElementById(`${i}`).setAttribute("style", `height:${styleOfb}px`); 
-                syncDelay(100);
+                
                 document.getElementById(`${i+1}`).setAttribute("style", `height:${styleOfa}px`); 
                 
 
@@ -46,7 +46,44 @@ function bubbleSort(anArray){
     console.log(`sorted array ${anArray}`)
     return anArray;
 }
+function selectionSort(anArray){    
+    for(var m=0;m<anArray.length; m++){
+        var min = anArray[m];
+        for(i = m+1; i<anArray.length; i++){
+            if(min>=anArray[index]){
+                min=anArray[index];
+            }
+        }
+        var a = anArray.indexOf(min);
+        var b = anArray[index];
+        anArray[a] = b;
+        anArray[index] = min;
+        index += index;
+    }
+    
+    console.log(anArray);
+    /*var sortedArray = [];
+    for(var m=0; m<anArray.length; m++){
+        var minimum=anArray[m];
+        for(var i=0; i<anArray.length; i++){
+            if(anArray[i]<minimum){
+                minimum = anArray[i];
+            }  
+        }
+        var a = anArray[m];
+        var b = anArray.indexOf(minimum);
+        anArray[m] = b;
+        anArray[b] = a;
+        console.log(anArray);
+    }
+    console.log(`sorted array ${sortedArray}`)
+    return sortedArray;
+    */
+}
 
+document.querySelector("#selectionSort").addEventListener('click', event => {
+    selectionSort(newArray);
+  });
 document.querySelector("#bubbleSort").addEventListener('click', event => {
     bubbleSort(newArray);
   });
