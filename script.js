@@ -46,7 +46,7 @@ function bubbleSort(anArray){
     console.log(`sorted array ${anArray}`)
     return anArray;
 }
-var aGivenArray = [23, 23, 50, 8, 37, 26, 29, 17, 49, 44]
+
 function selectionSort(anArray){  
     console.log(anArray.length);
     for(var m=0;m<anArray.length; m++){
@@ -70,29 +70,19 @@ function selectionSort(anArray){
         console.log(`when the ${m}th iteration is done the minimum is${min}`);
         console.log(`beause the minimum is ${min} im swapping its position which is at index ${a} with index${m}`)
         console.log(`the new arrau looks like this ${anArray}`);
-        
+        //actual swapping on the visualizer html
+        var styleOfa = document.getElementById(`${a}`).offsetHeight;
+        console.log(`the height of element ${a} is ${styleOfa}`);
+        var styleOfb = document.getElementById(`${m}`).offsetHeight;
+        console.log(`the height of element ${m} is ${styleOfb}`);
+        document.getElementById(`${m}`).setAttribute("style", `height:${styleOfa}px`); 
+        document.getElementById(`${a}`).setAttribute("style", `height:${styleOfb}px`);
     }
     
     console.log(anArray);
-    /*var sortedArray = [];
-    for(var m=0; m<anArray.length; m++){
-        var minimum=anArray[m];
-        for(var i=0; i<anArray.length; i++){
-            if(anArray[i]<minimum){
-                minimum = anArray[i];
-            }  
-        }
-        var a = anArray[m];
-        var b = anArray.indexOf(minimum);
-        anArray[m] = b;
-        anArray[b] = a;
-        console.log(anArray);
-    }
-    console.log(`sorted array ${sortedArray}`)
-    return sortedArray;
-    */
+    
 }
-selectionSort(aGivenArray);
+
 document.querySelector("#selectionSort").addEventListener('click', event => {
     selectionSort(newArray);
   });
