@@ -18,11 +18,10 @@ function bubbleSort(anArray){
     for(var m=0; m<anArray.length; m++){
         for(var i=0; i<anArray.length; i++){
             if(anArray[i]> anArray[i+1]){
-                
-                
                 var a = anArray[i];
                 var b = anArray[i+1];
-                console.log(`comparing ${a} and ${b} and swapped them`);
+                // swaping a and b on the array
+                //console.log(`comparing ${a} and ${b} and swapped them`);
                 anArray[i] = b;
                 anArray[i+1] = a; 
                 
@@ -48,33 +47,34 @@ function bubbleSort(anArray){
 }
 
 function selectionSort(anArray){  
-    console.log(anArray.length);
+    //console.log(anArray.length);
     for(var m=0;m<anArray.length; m++){
         var min = anArray[m];
         var minIndex = m;
-        console.log(`minimum is ${min} on the ${m}th iteration`)
+        //console.log(`minimum is ${min} on the ${m}th iteration`)
         for(var i=m; i<anArray.length; i++){
-            console.log(`M IS ${m} and i is ${i}`);
+            //console.log(`M IS ${m} and i is ${i}`);
             if(min>=anArray[i]){
                 min=anArray[i];
                 minIndex = i;
-                console.log(`the new minimum is ${min}`)
+                //console.log(`the new minimum is ${min}`)
                 //console.log("found a new minimum at index: "+ i+ "which is "+min);
             }
         }
-        
+        // swapping the m'th element and the new minimum so that the minimum will be pushed to the start of the array
         var a = minIndex;
         var b = anArray[m];
         anArray[a] = b;
         anArray[m] = min;
-        console.log(`when the ${m}th iteration is done the minimum is${min}`);
-        console.log(`beause the minimum is ${min} im swapping its position which is at index ${a} with index${m}`)
-        console.log(`the new arrau looks like this ${anArray}`);
+        //console.log(`when the ${m}th iteration is done the minimum is${min}`);
+        //console.log(`beause the minimum is ${min} im swapping its position which is at index ${a} with index${m}`)
+        //console.log(`the new arrau looks like this ${anArray}`);
+
         //actual swapping on the visualizer html
         var styleOfa = document.getElementById(`${a}`).offsetHeight;
-        console.log(`the height of element ${a} is ${styleOfa}`);
+        //console.log(`the height of element ${a} is ${styleOfa}`);
         var styleOfb = document.getElementById(`${m}`).offsetHeight;
-        console.log(`the height of element ${m} is ${styleOfb}`);
+        //console.log(`the height of element ${m} is ${styleOfb}`);
         document.getElementById(`${m}`).setAttribute("style", `height:${styleOfa}px`); 
         document.getElementById(`${a}`).setAttribute("style", `height:${styleOfb}px`);
     }

@@ -2,8 +2,25 @@
     margin-left: 1px;
     height: 100px;
     width: 10px;
-    background-color: rgb(53, 53, 53);
+    background-color: rgb(16, 16, 102);
+  }
+  h1{
+      text-align: center;
+    }
+  button{
+      margin: 5px;
+      height: 40px;
+      border-radius: 10%;
+      border: 1px solid rgb(179, 186, 255)
   }
   .main{
+      align-items: center;
       display:flex;
+      background-color: rgb(53, 53, 53);
   } 
+  #bubbleSort{
+      float:right;
+  }
+  #selectionSort{
+      float: right;
+  }
