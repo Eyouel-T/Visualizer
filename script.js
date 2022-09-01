@@ -13,6 +13,7 @@ function arrayGenerator(arrayLength){
      
      return randomArray;
 }
+//The function for doing the Bubble Sorting algorithm
 function bubbleSort(anArray){
     console.log("test");
     for(var m=0; m<anArray.length; m++){
@@ -45,7 +46,7 @@ function bubbleSort(anArray){
     console.log(`sorted array ${anArray}`)
     return anArray;
 }
-
+//The function for doing the Selection Sorting algorithm
 function selectionSort(anArray){  
     //console.log(anArray.length);
     for(var m=0;m<anArray.length; m++){
@@ -81,6 +82,10 @@ function selectionSort(anArray){
     
     console.log(anArray);
     
+}
+//The function for doing the Quick Sorting algorithm
+function quickSort(anArray){
+
 }
 
 document.querySelector("#selectionSort").addEventListener('click', event => {
